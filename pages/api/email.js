@@ -9,6 +9,8 @@ const openai = new OpenAIApi(configuration);
 export default async function handler(req,res) {
     const body = JSON.parse(req.body)
 
+    console.log(body)
+
     const response = await openai.createCompletion("text-davinci-002", {
       prompt: `Respond to the following email in a ${body.tone} tone: \n\n ${body.content}`,
       temperature: 0.9,

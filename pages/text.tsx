@@ -3,10 +3,11 @@ import Head from 'next/head'
 import { useState } from 'react'
 import { ToneOfVoice } from '../components/toneOfVoice'
 import { Menu } from '../components/menu'
-import { IAPIResponse, ITone } from '../interfaces'
+import { IAPIResponse } from '../interfaces'
+import { tones } from '../constants'
 
 const textResponse: NextPage = () => {
-  const [tone, setTone] = useState({} as ITone);
+  const [tone, setTone] = useState(tones[0]);
   const [recipientName, setRecipientName] = useState("");
   const [relationship, setRelationship] = useState("");
   const [content, setContent] = useState("");
@@ -39,7 +40,7 @@ const textResponse: NextPage = () => {
     setSpin(true);
     e.preventDefault();
     const data = {
-      tone,
+      tone: tone.text,
       recipientName,
       relationship,
       content

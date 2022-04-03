@@ -1,12 +1,5 @@
+import { tones } from "../constants";
 import { ITone } from "../interfaces";
-
-const tones: ITone[] = [
-  { id: 1, text: "Professional" },
-  { id: 2, text: "Friendly" },
-  { id: 3, text: "Witty" },
-  { id: 4, text: "Defensive" },
-  { id: 5, text: "Aggressive" },
-];
 
 const defaultStyle = "bg-white text-black border-indigo-400";
 const activeStyle = "bg-indigo-600 text-white border-transparent";

@@ -3,11 +3,12 @@ import Head from 'next/head'
 import { useState } from 'react'
 import { Menu } from '../components/menu'
 import { ToneOfVoice } from '../components/toneOfVoice'
-import { IAPIResponse, ITone } from '../interfaces'
+import { tones } from '../constants'
+import { IAPIResponse } from '../interfaces'
 
 const Email: NextPage = () => {
   const [content, setContent] = useState("");
-  const [tone, setTone] = useState({} as ITone);
+  const [tone, setTone] = useState(tones[0]);
   const [emailResult, setEmailResult] = useState({} as IAPIResponse);
   const [spin, setSpin] = useState(false);
 
@@ -19,7 +20,7 @@ const Email: NextPage = () => {
     setSpin(true);
     e.preventDefault();
     const data = {
-      tone,
+      tone: tone.text,
       content,
     }
     const res = await fetch('/api/email', { method: "POST", body: JSON.stringify(data) });
