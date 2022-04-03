@@ -6,7 +6,7 @@ import { Menu } from '../components/menu'
 import { IAPIResponse } from '../interfaces'
 import { tones } from '../constants'
 
-const textResponse: NextPage = () => {
+const TextPage: NextPage = () => {
   const [tone, setTone] = useState(tones[0]);
   const [recipientName, setRecipientName] = useState("");
   const [relationship, setRelationship] = useState("");
@@ -62,7 +62,7 @@ const textResponse: NextPage = () => {
       <Menu />
 
       <h1 className="text-6xl font-bold mt-20 animate-bounce">
-          What's{' '}
+          What&apos;s{' '}
           <a className="text-blue-600" href="https://nextjs.org">
             the{' '}
           </a>
@@ -93,7 +93,7 @@ const textResponse: NextPage = () => {
 
             <div className="rounded-md shadow-sm -space-y-px">
               <div>
-                <label htmlFor="relationship" className="sr-only">What's your relationship?</label>
+                <label htmlFor="relationship" className="sr-only">What&apos;s your relationship?</label>
                 <input
                   id="relationship"
                   name="relationship"
@@ -151,4 +151,4 @@ const textResponse: NextPage = () => {
   )
 }
 
-export default textResponse
+export default TextPage

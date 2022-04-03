@@ -6,7 +6,7 @@ import { ToneOfVoice } from '../components/toneOfVoice'
 import { tones } from '../constants'
 import { IAPIResponse } from '../interfaces'
 
-const Email: NextPage = () => {
+const EmailPage: NextPage = () => {
   const [content, setContent] = useState("");
   const [tone, setTone] = useState(tones[0]);
   const [emailResult, setEmailResult] = useState({} as IAPIResponse);
@@ -38,7 +38,7 @@ const Email: NextPage = () => {
       <Menu />
 
       <h1 className={`text-6xl font-bold mt-20 animate-bounce ${spin && "animate-ping"}`}>
-        What's troubling{' '}
+        What&apos;s troubling{' '}
         <a className={`text-indigo-500`}>
           y
         </a>
@@ -103,4 +103,4 @@ const Email: NextPage = () => {
   )
 }
 
-export default Email
+export default EmailPage
