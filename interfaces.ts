@@ -4,3 +4,8 @@ export interface IAPIResponse {
   logprobs: any
   finish_reason: string
 }
+
+export interface ITone {
+  id: number;
+  text: string;
+}

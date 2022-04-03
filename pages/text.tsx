@@ -3,10 +3,10 @@ import Head from 'next/head'
 import { useState } from 'react'
 import { ToneOfVoice } from '../components/toneOfVoice'
 import { Menu } from '../components/menu'
-import { IAPIResponse } from '../interfaces'
+import { IAPIResponse, ITone } from '../interfaces'
 
 const textResponse: NextPage = () => {
-  const [tone, setTone] = useState("");
+  const [tone, setTone] = useState({} as ITone);
   const [recipientName, setRecipientName] = useState("");
   const [relationship, setRelationship] = useState("");
   const [content, setContent] = useState("");
@@ -120,7 +120,7 @@ const textResponse: NextPage = () => {
               </div>
             </div>
             <div>
-              <ToneOfVoice onChange={setTone} />
+              <ToneOfVoice onChange={setTone} value={tone} />
             </div>
             <div>
               <button type="submit" className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
